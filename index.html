@@ -8,21 +8,32 @@
         html, body {
             height: 100%;
             margin: 0;
+            overflow: hidden;
         }
 
         body {
             background-image: url("meat.gif");
             background-repeat: repeat;
-            background-size: 420px 520px; /* leve zoom pra quebrar padrão */
-            background-position: top left;
+            background-size: 400px 500px; /* tamanho original do gif */
+            animation: mover 20s linear infinite;
         }
 
-        /* camada por cima pra esconder emendas */
+        /* movimento contínuo pra esconder as emendas */
+        @keyframes mover {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 400px 500px;
+            }
+        }
+
+        /* camada pra disfarçar ainda mais */
         body::before {
             content: "";
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.25); /* ajusta aqui se quiser mais escuro */
+            background: rgba(0, 0, 0, 0.25);
             pointer-events: none;
             z-index: 1;
         }
