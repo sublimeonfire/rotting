@@ -8,45 +8,34 @@
         html, body {
             height: 100%;
             margin: 0;
-            overflow: hidden;
         }
 
         body {
-            background-image: url("meat.gif");
-            background-repeat: repeat;
-            background-size: 400px 500px; /* tamanho original do gif */
-            animation: mover 20s linear infinite;
+            background: url("meat.gif") no-repeat center center fixed;
+            background-size: cover; /* cobre a tela inteira */
         }
 
-        /* movimento contínuo pra esconder as emendas */
-        @keyframes mover {
-            from {
-                background-position: 0 0;
-            }
-            to {
-                background-position: 400px 500px;
-            }
-        }
-
-        /* camada pra disfarçar ainda mais */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.25);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* conteúdo */
+        /* conteúdo por cima */
         .conteudo {
-            position: relative;
-            z-index: 2;
             color: white;
             text-align: center;
             padding-top: 100px;
             font-size: 30px;
             text-shadow: 2px 2px 5px black;
+        }
+
+        /* opcional: escurecer pra ficar mais bonito */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .conteudo {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
