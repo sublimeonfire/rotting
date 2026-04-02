@@ -8,14 +8,15 @@
         html, body {
             height: 100%;
             margin: 0;
+            background-color: black; /* cor de fundo pra preencher */
         }
 
         body {
             background: url("meat.gif") no-repeat center center fixed;
-            background-size: cover; /* cobre a tela inteira */
+            background-size: contain; /* mantém proporção SEM zoom exagerado */
         }
 
-        /* conteúdo por cima */
+        /* conteúdo */
         .conteudo {
             color: white;
             text-align: center;
@@ -24,7 +25,7 @@
             text-shadow: 2px 2px 5px black;
         }
 
-        /* opcional: escurecer pra ficar mais bonito */
+        /* leve overlay */
         body::before {
             content: "";
             position: fixed;
